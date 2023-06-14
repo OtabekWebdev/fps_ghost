@@ -1,0 +1,3 @@
+import * as THREE from "three";
+import { PointerLockControls } from "PointerLockControls";
+import { GLTFLoader } from 'GLTFLoader'

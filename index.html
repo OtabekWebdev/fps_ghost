@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script async src="./es-module-shims.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.min.css"
+      rel="stylesheet"
+    />
+    <title>by Otash360</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #bg {
+        /* position: absolute; */
+        overflow: hidden;
+        width: 100%;
+        height: 100vh;
+        background: #0077ff63;
+        position: relative;
+      }
+      #bg::after {
+        content: "";
+        width: calc(100vw / 200);
+        height: calc(100vw / 200);
+        border-radius: 50%;
+        background: red;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+      .score {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      #score {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bg">
+      <div class="score">
+        Score :
+        <p id="score">0</p>
+      </div>
+      <canvas id="c"></canvas>
+    </div>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./build/three.module.js",
+          "orbit": "./build/OrbitControls.js",
+          "PointerLockControls": "./build/controls/PointerLockControls.js",
+          "GLTFLoader": "./build/Loader/GLTFLoader.js"
+        }
+      }
+    </script>
+    <!-- <script src="./build/three.js"></script> -->
+    <!-- <script src="./build/controls/OrbitControls.js"></script> -->
+    <script async src="./index.js" type="module"></script>
+  </body>
+</html>
